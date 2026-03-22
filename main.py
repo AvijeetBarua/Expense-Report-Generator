@@ -78,6 +78,7 @@ def main():
           pdf.cell(90, 10, expense.name, border=1)
           pdf.cell(50, 10, expense.category, border=1)
           pdf.cell(50, 10, f"{expense.amount:.2f}", border=1,align='R', new_x="LMARGIN", new_y="NEXT")
+        pdf.cell(190, 10, f"Total:${sum(expense.amount for expense in expenses):.2f}", border= 1, align='R', new_x="LMARGIN", new_y="NEXT")
     pdf.output("expenses.pdf")
     print("done")
 
